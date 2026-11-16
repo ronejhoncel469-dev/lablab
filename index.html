@@ -1,0 +1,1971 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Monthsarry, Luv! ✨</title>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Cormorant Garamond (Romantic Serif), Plus Jakarta Sans (Clean Modern UI), Caveat (Handwritten Polaroid/Letter) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            hand: ['"Caveat"', 'cursive'],
+          },
+          colors: {
+            rosewood: {
+              50: '#fff5f7',
+              100: '#ffe8ed',
+              200: '#ffd4de',
+              300: '#ffb0c4',
+              400: '#ff80a1',
+              500: '#f44d7b',
+              600: '#e0285e',
+              700: '#bd184b',
+              800: '#9d1642',
+              900: '#590b25',
+              950: '#2d0513',
+            },
+            champagne: {
+              50: '#fdfbf7',
+              100: '#f9f3e8',
+              200: '#f1e4cd',
+              300: '#e6cfa8',
+              400: '#d7b27c',
+            }
+          },
+          boxShadow: {
+            'glass': '0 12px 40px -8px rgba(189, 24, 75, 0.14)',
+            'glass-dark': '0 12px 40px -8px rgba(0, 0, 0, 0.55)',
+            'polaroid': '0 14px 28px -6px rgba(60, 20, 35, 0.12), 0 4px 10px -2px rgba(60, 20, 35, 0.06)',
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-primary: #fdfbf7;
+      --text-primary: #3b1322;
+      --accent-rose: #e0285e;
+      --accent-gold: #d4a373;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: #ffb0c4;
+      color: #590b25;
+    }
+
+    /* Glassmorphism Utilities */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 228, 235, 0.85);
+    }
+
+    .dark .glass-card {
+      background: rgba(38, 12, 24, 0.72);
+      border: 1px solid rgba(255, 176, 196, 0.15);
+    }
+
+    /* Polaroid 3D Card Effect */
+    .polaroid-card {
+      transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      transform-style: preserve-3d;
+    }
+
+    .polaroid-card:hover {
+      transform: translateY(-8px) rotate(0deg) scale(1.02) !important;
+      z-index: 20;
+    }
+
+    /* Decorative Washi Tape on Polaroids */
+    .washi-tape {
+      position: absolute;
+      top: -10px;
+      left: 50%;
+      transform: translateX(-50%) rotate(-3deg);
+      width: 88px;
+      height: 24px;
+      background: rgba(255, 212, 222, 0.68);
+      backdrop-filter: blur(2px);
+      border-left: 2px dashed rgba(224, 40, 94, 0.25);
+      border-right: 2px dashed rgba(224, 40, 94, 0.25);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    .dark .washi-tape {
+      background: rgba(244, 77, 123, 0.28);
+      border-color: rgba(255, 176, 196, 0.3);
+    }
+
+    /* Floating Heartbeat Animation */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      15% { transform: scale(1.16); }
+      30% { transform: scale(0.96); }
+      45% { transform: scale(1.1); }
+    }
+
+    .animate-heartbeat {
+      animation: heartbeat 2.2s infinite ease-in-out;
+    }
+
+    /* Gentle Float Animation */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-10px) rotate(1.5deg); }
+    }
+
+    .animate-float {
+      animation: floatSlow 5s ease-in-out infinite;
+    }
+
+    /* Equalizer Bars */
+    @keyframes eqBar1 {
+      0%, 100% { height: 4px; }
+      50% { height: 16px; }
+    }
+    @keyframes eqBar2 {
+      0%, 100% { height: 15px; }
+      33% { height: 5px; }
+      66% { height: 18px; }
+    }
+    @keyframes eqBar3 {
+      0%, 100% { height: 8px; }
+      40% { height: 17px; }
+      80% { height: 4px; }
+    }
+
+    .eq-playing .bar-1 { animation: eqBar1 0.8s infinite ease-in-out; }
+    .eq-playing .bar-2 { animation: eqBar2 0.7s infinite ease-in-out; }
+    .eq-playing .bar-3 { animation: eqBar3 0.9s infinite ease-in-out; }
+    .eq-playing .bar-4 { animation: eqBar2 0.65s infinite ease-in-out; }
+
+    /* Lined Paper Texture for Love Letter */
+    .letter-paper {
+      background-color: #fffdf9;
+      background-image: linear-gradient(transparent 95%, rgba(224, 40, 94, 0.12) 95%);
+      background-size: 100% 2.1rem;
+      line-height: 2.1rem;
+    }
+
+    .dark .letter-paper {
+      background-color: #240c17;
+      background-image: linear-gradient(transparent 95%, rgba(255, 176, 196, 0.1) 95%);
+      background-size: 100% 2.1rem;
+      line-height: 2.1rem;
+    }
+
+    /* Typewriter Cursor */
+    .typewriter-cursor::after {
+      content: '|';
+      display: inline-block;
+      margin-left: 2px;
+      color: #e0285e;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+
+    /* Scroll Reveal Transitions */
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Coupon Perforated Edge */
+    .coupon-ticket {
+      position: relative;
+      transition: all 0.35s ease;
+    }
+    .coupon-ticket::before,
+    .coupon-ticket::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 20px;
+      height: 20px;
+      border-radius: 9999px;
+      transform: translateY(-50%);
+      background-color: #fdfbf7;
+      z-index: 5;
+    }
+    .dark .coupon-ticket::before,
+    .dark .coupon-ticket::after {
+      background-color: #16050d;
+    }
+    .coupon-ticket::before { left: -11px; }
+    .coupon-ticket::after { right: -11px; }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #fdfbf7;
+    }
+    .dark ::-webkit-scrollbar-track {
+      background: #1a0610;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #ffb0c4;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #f44d7b;
+    }
+  </style>
+</head>
+
+<body class="bg-champagne-50 text-rosewood-950 dark:bg-[#16050d] dark:text-rosewood-50 transition-colors duration-500 relative min-h-screen">
+
+  <!-- ========================================================================= -->
+  <!-- AMBIENT FLOATING PETALS & HEARTS BACKGROUND CANVAS                        -->
+  <!-- ========================================================================= -->
+  <canvas id="ambientCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+  <!-- Confetti Burst Canvas for Coupons / Surprises -->
+  <canvas id="confettiCanvas" class="fixed inset-0 pointer-events-none z-50"></canvas>
+
+  <!-- ========================================================================= -->
+  <!-- 1. INTERACTIVE ENTRY / WELCOME GATE OVERLAY                               -->
+  <!-- ========================================================================= -->
+  <div id="welcomeGate" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gradient-to-br from-rosewood-950/95 via-[#260716]/95 to-rosewood-900/95 backdrop-blur-xl transition-all duration-1000">
+    <!-- Decorative glowing orbs -->
+    <div class="absolute w-80 h-80 rounded-full bg-rosewood-500/20 blur-3xl -top-12 -left-12 pointer-events-none"></div>
+    <div class="absolute w-96 h-96 rounded-full bg-amber-400/15 blur-3xl -bottom-16 -right-12 pointer-events-none"></div>
+
+    <div class="relative max-w-md w-full text-center p-8 sm:p-10 rounded-3xl bg-white/10 border border-white/20 shadow-2xl backdrop-blur-2xl text-white">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rosewood-500/30 border border-rosewood-300/30 text-rosewood-100 text-xs font-medium tracking-widest uppercase mb-6">
+        <span class="w-2 h-2 rounded-full bg-rosewood-300 animate-ping"></span>
+        Happy 15 months of love, lablab ko! 💖
+      </div>
+
+      <!-- Wax-Sealed Envelope Graphic -->
+      <div class="relative mx-auto w-36 h-28 mb-7 group cursor-pointer" id="envelopeTrigger" role="button" tabindex="0" aria-label="Open your surprise">
+        <div class="absolute inset-0 bg-gradient-to-br from-rosewood-200 to-champagne-200 rounded-2xl shadow-xl transform group-hover:scale-105 transition-transform duration-500 flex items-center justify-center border border-white/60">
+          <!-- Envelope flap lines -->
+          <svg class="w-full h-full text-rosewood-400/40 p-2" viewBox="0 0 120 90" fill="none">
+            <path d="M4 6L60 52L116 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 84L44 46M116 84L76 46" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <!-- Wax Seal Heart Button -->
+          <div class="absolute w-14 h-14 rounded-full bg-gradient-to-br from-rosewood-500 to-rosewood-700 shadow-lg border-2 border-amber-200/70 flex items-center justify-center animate-heartbeat group-hover:from-rosewood-600 group-hover:to-rosewood-800">
+            <svg class="w-7 h-7 text-white fill-current" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="font-serif text-3xl sm:text-4xl font-semibold tracking-wide text-white mb-3">
+        For <span id="gateHerName" class="italic text-rosewood-300">My Favorite Person</span>
+      </h1>
+      <p class="text-sm sm:text-base text-rosewood-100/85 leading-relaxed mb-8">
+        Sorry  nalimot  ko  Monthsarry  naton,  pero  here  na  pambawi  ko  haha. Iloveyou  luv  mhwaupss.
+      </p>
+
+      <button id="openSurpriseBtn" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-rosewood-500 via-rosewood-600 to-pink-600 hover:from-rosewood-600 hover:to-pink-700 text-white font-semibold tracking-wide shadow-lg shadow-rosewood-600/40 hover:shadow-rosewood-500/60 transform hover:-translate-y-0.5 active:translate-y-0 transition-all duration-300 flex items-center justify-center gap-3">
+        <span>Click to Open Your Surprise</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+        </svg>
+      </button>
+
+      <p class="mt-4 text-xs text-rosewood-200/60 flex items-center justify-center gap-1.5">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+        </svg>
+        
+      </p>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- STICKY NAVIGATION BAR                                                     -->
+  <!-- ========================================================================= -->
+  <header class="sticky top-0 z-30 glass-card border-b border-rosewood-200/60 dark:border-rosewood-800/40 transition-colors">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <!-- Brand / Couple Initials -->
+      <a href="#hero" class="flex items-center gap-2.5 group">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-rosewood-500 to-rosewood-700 text-white flex items-center justify-center shadow-md shadow-rosewood-500/20 group-hover:scale-105 transition-transform">
+          <span class="font-serif font-bold text-lg tracking-tighter" id="navInitials">M&amp;S</span>
+        </div>
+        <span class="font-serif text-xl font-semibold tracking-tight text-rosewood-900 dark:text-rosewood-100 hidden sm:inline" id="navCoupleTitle">
+          Our Love Story
+        </span>
+      </a>
+
+      <!-- Quick Section Links -->
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 text-sm font-medium text-rosewood-800/80 dark:text-rosewood-200/80">
+        <a href="#counter" class="px-3 py-1.5 rounded-xl hover:bg-rosewood-100/70 dark:hover:bg-rosewood-900/40 hover:text-rosewood-600 dark:hover:text-rosewood-300 transition-colors">Time Together</a>
+        <a href="#gallery" class="px-3 py-1.5 rounded-xl hover:bg-rosewood-100/70 dark:hover:bg-rosewood-900/40 hover:text-rosewood-600 dark:hover:text-rosewood-300 transition-colors">Polaroids</a>
+        <a href="#timeline" class="px-3 py-1.5 rounded-xl hover:bg-rosewood-100/70 dark:hover:bg-rosewood-900/40 hover:text-rosewood-600 dark:hover:text-rosewood-300 transition-colors">Our Story</a>
+        <a href="#letter" class="px-3 py-1.5 rounded-xl hover:bg-rosewood-100/70 dark:hover:bg-rosewood-900/40 hover:text-rosewood-600 dark:hover:text-rosewood-300 transition-colors">Love Letter</a>
+        <a href="#surprises" class="px-3 py-1.5 rounded-xl hover:bg-rosewood-100/70 dark:hover:bg-rosewood-900/40 hover:text-rosewood-600 dark:hover:text-rosewood-300 transition-colors">Reasons &amp; Coupons</a>
+      </nav>
+
+      <!-- Actions: Send Heart Burst + Evening Mode Toggle -->
+      <div class="flex items-center gap-2">
+        <button id="sendLoveBurstBtn" class="px-3 py-1.5 rounded-xl bg-rosewood-100 dark:bg-rosewood-900/60 text-rosewood-700 dark:text-rosewood-200 hover:bg-rosewood-200 dark:hover:bg-rosewood-800 text-xs sm:text-sm font-medium flex items-center gap-1.5 transition-all active:scale-95" title="Shower page with hearts">
+          <span class="text-base">💖</span>
+          <span class="hidden sm:inline">Shower Love</span>
+        </button>
+
+        <button id="themeToggleBtn" class="p-2.5 rounded-xl bg-rosewood-100/70 dark:bg-rosewood-900/60 text-rosewood-800 dark:text-amber-200 hover:bg-rosewood-200/70 dark:hover:bg-rosewood-800 transition-colors" aria-label="Toggle Romantic Evening Mode" title="Toggle Day / Romantic Evening Mode">
+          <!-- Sun Icon (shown in dark mode) -->
+          <svg id="sunIcon" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+          <!-- Moon Icon (shown in light mode) -->
+          <svg id="moonIcon" class="w-5 h-5 block dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- MAIN CONTENT CONTAINER                                                    -->
+  <!-- ========================================================================= -->
+  <main class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 pb-28">
+
+    <!-- ======================================================================= -->
+    <!-- 2. HERO SECTION & LIVE RELATIONSHIP COUNTER                             -->
+    <!-- ======================================================================= -->
+    <section id="hero" class="pt-12 sm:pt-20 pb-14 text-center relative">
+      <!-- Decorative Ambient Glow Behind Hero -->
+      <div class="absolute top-10 left-1/2 -translate-x-1/2 w-3/4 max-w-lg h-64 bg-gradient-to-r from-rosewood-300/30 via-amber-200/25 to-pink-300/30 dark:from-rosewood-600/20 dark:via-rosewood-800/15 dark:to-pink-700/20 blur-3xl -z-10 rounded-full"></div>
+
+      <!-- Monthsarry Pill Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card shadow-sm text-rosewood-700 dark:text-rosewood-200 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-6">
+        <span class="text-base">✨</span>
+        <span id="heroMonthsarryBadge">Happy 15 months of love, lablab ko! 💖</span>
+        <span class="text-base">✨</span>
+      </div>
+
+      <!-- Couple Names Heading -->
+      <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-semibold tracking-tight text-rosewood-950 dark:text-white leading-none mb-4">
+        <span id="heroHisName">Jhoncel</span>
+        <span class="inline-block mx-2 sm:mx-4 text-rosewood-500 font-normal italic animate-heartbeat">&amp;</span>
+        <span id="heroHerName">Krizel</span>
+      </h1>
+
+      <!-- Romantic Tagline -->
+      <p id="heroSubtitle" class="max-w-2xl mx-auto text-base sm:text-xl text-rosewood-800/80 dark:text-rosewood-100/80 font-normal leading-relaxed mb-10">
+        Every day with you feels like my favorite chapter. Here is to celebrating every laugh, every late-night talk, and every memories we have shared so far.
+      </p>
+
+      <!-- Quick CTA Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-16">
+        <a href="#letter" class="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-rosewood-600 to-rosewood-500 hover:from-rosewood-700 hover:to-rosewood-600 text-white font-semibold shadow-lg shadow-rosewood-500/25 hover:shadow-rosewood-500/40 transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          <span>Read My Message for you luv</span>
+        </a>
+        <a href="#gallery" class="px-6 py-3.5 rounded-2xl glass-card hover:bg-white/90 dark:hover:bg-rosewood-900/50 text-rosewood-900 dark:text-rosewood-100 font-semibold shadow-sm transition-all transform hover:-translate-y-0.5 flex items-center gap-2">
+          <svg class="w-5 h-5 text-rosewood-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+          </svg>
+          <span>Our Memories</span>
+        </a>
+      </div>
+
+      <!-- LIVE RELATIONSHIP COUNTER CARD -->
+      <div id="counter" class="max-w-4xl mx-auto glass-card rounded-3xl p-6 sm:p-10 shadow-glass dark:shadow-glass-dark relative overflow-hidden">
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-2 mb-6 pb-4 border-b border-rosewood-200/60 dark:border-rosewood-800/50">
+          <div class="text-left">
+            <span class="text-xs font-semibold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-400 block">Counting Every Heartbeat</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-semibold text-rosewood-950 dark:text-white">
+              Time Since Our Story Began
+            </h2>
+          </div>
+          <div class="px-4 py-1.5 rounded-xl bg-rosewood-100/80 dark:bg-rosewood-900/70 text-rosewood-800 dark:text-rosewood-200 text-xs sm:text-sm font-medium">
+            Started on <span id="startDateFormatted" class="font-semibold">June 16, 2025</span>
+          </div>
+        </div>
+
+        <!-- 5-Column Live Counter Grid -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 sm:gap-4">
+          <div class="p-4 rounded-2xl bg-white/80 dark:bg-rosewood-950/60 border border-rosewood-100 dark:border-rosewood-800/40 shadow-sm">
+            <div id="countMonths" class="font-serif text-4xl sm:text-5xl font-bold text-rosewood-600 dark:text-rosewood-400">0</div>
+            <div class="text-xs uppercase tracking-widest text-rosewood-800/70 dark:text-rosewood-200/70 font-semibold mt-1">Months</div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/80 dark:bg-rosewood-950/60 border border-rosewood-100 dark:border-rosewood-800/40 shadow-sm">
+            <div id="countDays" class="font-serif text-4xl sm:text-5xl font-bold text-rosewood-600 dark:text-rosewood-400">0</div>
+            <div class="text-xs uppercase tracking-widest text-rosewood-800/70 dark:text-rosewood-200/70 font-semibold mt-1">Days</div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/80 dark:bg-rosewood-950/60 border border-rosewood-100 dark:border-rosewood-800/40 shadow-sm">
+            <div id="countHours" class="font-serif text-4xl sm:text-5xl font-bold text-rosewood-600 dark:text-rosewood-400">00</div>
+            <div class="text-xs uppercase tracking-widest text-rosewood-800/70 dark:text-rosewood-200/70 font-semibold mt-1">Hours</div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/80 dark:bg-rosewood-950/60 border border-rosewood-100 dark:border-rosewood-800/40 shadow-sm">
+            <div id="countMinutes" class="font-serif text-4xl sm:text-5xl font-bold text-rosewood-600 dark:text-rosewood-400">00</div>
+            <div class="text-xs uppercase tracking-widest text-rosewood-800/70 dark:text-rosewood-200/70 font-semibold mt-1">Minutes</div>
+          </div>
+
+          <div class="col-span-2 sm:col-span-1 p-4 rounded-2xl bg-gradient-to-br from-rosewood-500 to-rosewood-600 text-white shadow-md shadow-rosewood-500/20">
+            <div id="countSeconds" class="font-serif text-4xl sm:text-5xl font-bold">00</div>
+            <div class="text-xs uppercase tracking-widest text-rosewood-100 font-semibold mt-1">Seconds</div>
+          </div>
+        </div>
+
+        <!-- Total Days & Next Monthsarry Footer -->
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs sm:text-sm text-rosewood-800/80 dark:text-rosewood-200/80">
+          <div class="flex items-center gap-1.5">
+            <span class="text-rosewood-500">♥</span>
+            <span>That’s <strong id="totalDaysTogether" class="text-rosewood-700 dark:text-rosewood-300">0</strong> total days of loving you</span>
+          </div>
+          <span class="hidden sm:inline text-rosewood-300">•</span>
+          <div class="flex items-center gap-1.5">
+            <span class="text-rosewood-500">🗓️</span>
+            <span id="nextMonthsarryCountdown">Celebrating our special day!</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 3. INTERACTIVE POLAROID PHOTO GALLERY & LIGHTBOX                        -->
+    <!-- ======================================================================= -->
+    <section id="gallery" class="py-14 scroll-mt-16">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-400 block mb-1">Captured Moments</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-rosewood-950 dark:text-white">
+            Our Polaroid Wall
+          </h2>
+          <p class="text-sm sm:text-base text-rosewood-800/75 dark:text-rosewood-200/75 mt-1">
+            Click any Polaroid to view closer, or add your favorite photos right from your phone/computer.
+          </p>
+        </div>
+
+        <!-- Add Local Photo Button -->
+        <div class="flex items-center gap-3">
+          <button id="openAddPhotoModalBtn" class="px-4 py-2.5 rounded-2xl bg-rosewood-600 hover:bg-rosewood-700 text-white text-xs sm:text-sm font-semibold shadow-md shadow-rosewood-600/20 flex items-center gap-2 transition-all">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/>
+            </svg>
+            <span>+ Add Our Photo</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="flex flex-wrap items-center gap-2 mb-8" id="galleryFilterTabs">
+        <button data-filter="all" class="filter-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-rosewood-600 text-white shadow-sm">
+          All Memories
+        </button>
+        <button data-filter="Dates" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card text-rosewood-800 dark:text-rosewood-200 hover:bg-rosewood-100/60 dark:hover:bg-rosewood-900/40">
+          🍷 Romantic Dates
+        </button>
+        <button data-filter="Adventures" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card text-rosewood-800 dark:text-rosewood-200 hover:bg-rosewood-100/60 dark:hover:bg-rosewood-900/40">
+          🌅 Adventures
+        </button>
+        <button data-filter="Silly Moments" class="filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card text-rosewood-800 dark:text-rosewood-200 hover:bg-rosewood-100/60 dark:hover:bg-rosewood-900/40">
+          🤪 Silly Moments
+        </button>
+      </div>
+
+      <!-- Polaroid Grid -->
+      <div id="polaroidGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7 sm:gap-8 pt-3">
+        <!-- Populated dynamically from CONFIG.photos -->
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 4. "OUR STORY" ANIMATED TIMELINE                                        -->
+    <!-- ======================================================================= -->
+    <section id="timeline" class="py-16 scroll-mt-16">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-semibold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-400 block mb-1">Step By Step</span>
+        <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-rosewood-950 dark:text-white">
+          Milestones of Us
+        </h2>
+        <p class="text-sm sm:text-base text-rosewood-800/75 dark:text-rosewood-200/75 mt-2">
+          From the very first spark to where we stand today, every memory with you is etched in my heart. Papansin pa ako sidto haha.
+        </p>
+      </div>
+
+      <!-- Vertical Timeline Container -->
+      <div class="relative max-w-4xl mx-auto">
+        <!-- Center / Left Vertical Line -->
+        <div class="absolute left-6 sm:left-1/2 top-2 bottom-2 w-0.5 bg-gradient-to-b from-rosewood-300 via-rosewood-500 to-amber-300 dark:from-rosewood-700 dark:via-rosewood-500 dark:to-rosewood-800 transform sm:-translate-x-1/2"></div>
+
+        <div id="timelineContainer" class="space-y-10">
+          <!-- Populated dynamically from CONFIG.timeline -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 5. INTERACTIVE LOVE LETTER (TYPEWRITER & ENVELOPE)                      -->
+    <!-- ======================================================================= -->
+    <section id="letter" class="py-16 scroll-mt-16">
+      <div class="max-w-3xl mx-auto">
+        <div class="text-center mb-10">
+          <span class="text-xs font-semibold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-400 block mb-1">Written From The Heart</span>
+          <h2 class="font-serif text-4xl sm:text-5xl font-semibold text-rosewood-950 dark:text-white">
+            A Letter For You
+          </h2>
+        </div>
+
+        <!-- Closed Envelope State -->
+        <div id="letterEnvelopeCard" class="glass-card rounded-3xl p-8 sm:p-12 text-center shadow-glass dark:shadow-glass-dark border border-rosewood-200 dark:border-rosewood-800/50 transition-all duration-500">
+          <div class="w-20 h-20 mx-auto mb-5 rounded-full bg-gradient-to-br from-rosewood-100 to-rosewood-200 dark:from-rosewood-900 dark:to-rosewood-800 flex items-center justify-center shadow-inner">
+            <span class="text-4xl animate-float">💌</span>
+          </div>
+          <h3 class="font-serif text-2xl sm:text-3xl font-semibold text-rosewood-950 dark:text-white mb-2">
+            To My labalab <span class="letterHerNamePlaceholder text-rosewood-600 dark:text-rosewood-300 italic">krizel</span>
+          </h3>
+          <p class="text-sm sm:text-base text-rosewood-800/75 dark:text-rosewood-200/75 max-w-md mx-auto mb-7">
+            Tap below to break the wax seal and read the letter I wrote for our Monthsarry.
+          </p>
+          <button id="unfoldLetterBtn" class="px-7 py-3.5 rounded-2xl bg-gradient-to-r from-rosewood-600 to-pink-600 hover:from-rosewood-700 hover:to-pink-700 text-white font-semibold shadow-lg shadow-rosewood-500/25 transition-all transform hover:-translate-y-0.5 inline-flex items-center gap-2.5">
+            <span>Read My Message For You</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Unfolded Paper Letter Card -->
+        <div id="letterPaperCard" class="hidden rounded-3xl p-6 sm:p-12 shadow-2xl border border-rosewood-200/80 dark:border-rosewood-800/60 letter-paper relative overflow-hidden transition-all duration-700">
+          <!-- Top Toolbar -->
+          <div class="flex flex-wrap items-center justify-between gap-2 pb-4 mb-6 border-b border-rosewood-200/70 dark:border-rosewood-800/60">
+            <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-300">
+              <span>✒️ Personal Note</span>
+              <span>•</span>
+              <span id="letterDateStamp">Happy 15th Monthsarry</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <button id="showFullLetterBtn" class="px-3 py-1 rounded-lg bg-rosewood-100 dark:bg-rosewood-900/70 text-rosewood-700 dark:text-rosewood-200 hover:bg-rosewood-200 text-xs font-semibold transition-colors">
+                Show Full Text
+              </button>
+              <button id="replayLetterBtn" class="px-3 py-1 rounded-lg bg-rosewood-100 dark:bg-rosewood-900/70 text-rosewood-700 dark:text-rosewood-200 hover:bg-rosewood-200 text-xs font-semibold transition-colors">
+                Replay Typewriter
+              </button>
+            </div>
+          </div>
+
+          <!-- Greeting -->
+          <div class="font-hand text-3xl sm:text-4xl text-rosewood-700 dark:text-rosewood-300 mb-4" id="letterSalutation">
+            My lablab krizel,
+          </div>
+
+          <!-- Typewriter Body -->
+          <div id="letterTypewriterBody" class="font-serif text-lg sm:text-xl text-rosewood-950 dark:text-rosewood-100 whitespace-pre-line min-h-[220px] tracking-wide"></div>
+
+          <!-- Sign-off Signature -->
+          <div id="letterSignatureBlock" class="mt-8 pt-4 text-right opacity-0 transition-opacity duration-700">
+            <p class="text-sm uppercase tracking-widest text-rosewood-500 dark:text-rosewood-400 font-semibold">Forever &amp; Always Yours,</p>
+            <p id="letterSignOffName" class="font-hand text-4xl text-rosewood-700 dark:text-rosewood-300 mt-1">Jhoncel ♥</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================= -->
+    <!-- 6. INTERACTIVE "JAR OF REASONS" & ROMANTIC LOVE COUPONS                 -->
+    <!-- ======================================================================= -->
+    <section id="surprises" class="py-14 scroll-mt-16">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+        <!-- LEFT COLUMN (5 cols): INTERACTIVE JAR OF REASONS -->
+        <div class="lg:col-span-5 glass-card rounded-3xl p-6 sm:p-8 shadow-glass dark:shadow-glass-dark flex flex-col items-center text-center relative overflow-hidden">
+          <span class="text-xs font-semibold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-400 mb-1">Little Reminders</span>
+          <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-rosewood-950 dark:text-white mb-2">
+            Jar of Reasons Why I Love You
+          </h3>
+          <p class="text-xs sm:text-sm text-rosewood-800/75 dark:text-rosewood-200/75 mb-6">
+            Whenever you are having a long day or just need a smile, pull a folded note from our jar.
+          </p>
+
+          <!-- Interactive SVG Glass Jar Graphic -->
+          <div id="loveJarGraphic" class="relative w-44 h-52 mb-6 cursor-pointer group select-none" role="button" tabindex="0" title="Click to pull a love note">
+            <!-- Ambient Glow Behind Jar -->
+            <div class="absolute inset-4 rounded-full bg-rosewood-400/25 dark:bg-rosewood-500/20 blur-2xl group-hover:bg-rosewood-400/40 transition-all"></div>
+
+            <svg viewBox="0 0 160 200" class="w-full h-full drop-shadow-md transform group-hover:scale-105 group-active:scale-95 transition-transform duration-300">
+              <!-- Jar Lid / Cork & Ribbon -->
+              <rect x="46" y="12" width="68" height="16" rx="5" fill="#d4a373" stroke="#a97142" stroke-width="2"/>
+              <rect x="42" y="26" width="76" height="10" rx="4" fill="#e6ccb2" stroke="#b08968" stroke-width="1.5"/>
+              <!-- Jar Neck & Glass Body -->
+              <path d="M48 36 L112 36 L118 52 C132 62 136 78 136 96 L136 168 C136 182 124 190 110 190 L50 190 C36 190 24 182 24 168 L24 96 C24 78 28 62 42 52 Z"
+                    fill="rgba(255, 240, 245, 0.55)" stroke="#f44d7b" stroke-width="2.5"/>
+              <!-- Glass Reflection Highlight -->
+              <path d="M36 70 Q32 120 36 168" stroke="rgba(255,255,255,0.8)" stroke-width="5" stroke-linecap="round" fill="none"/>
+
+              <!-- Folded Love Notes & Hearts Inside Jar -->
+              <g class="animate-pulse">
+                <rect x="42" y="150" width="26" height="18" rx="3" transform="rotate(-14 42 150)" fill="#ff80a1"/>
+                <rect x="72" y="155" width="28" height="18" rx="3" transform="rotate(8 72 155)" fill="#ffb0c4"/>
+                <rect x="95" y="142" width="26" height="18" rx="3" transform="rotate(-22 95 142)" fill="#fcd34d"/>
+                <rect x="52" y="130" width="28" height="18" rx="3" transform="rotate(15 52 130)" fill="#f44d7b"/>
+                <rect x="82" y="126" width="26" height="18" rx="3" transform="rotate(-8 82 126)" fill="#fda4af"/>
+                <rect x="40" y="112" width="25" height="16" rx="3" transform="rotate(6 40 112)" fill="#fde68a"/>
+                <!-- Floating Mini Hearts Inside Jar -->
+                <path d="M80 95 C80 90 73 87 70 92 C67 87 60 90 60 95 C60 101 70 106 70 109 C70 106 80 101 80 95 Z" fill="#e0285e"/>
+                <path d="M110 105 C110 101 105 99 103 103 C101 99 96 101 96 105 C96 109 103 113 103 115 C103 113 110 109 110 105 Z" fill="#fb7185"/>
+              </g>
+
+              <!-- Jar Label Tag -->
+              <rect x="46" y="72" width="68" height="28" rx="6" fill="#fffdf9" stroke="#f44d7b" stroke-width="1.5"/>
+              <text x="80" y="90" text-anchor="middle" fill="#bd184b" font-family="Caveat, cursive" font-size="16" font-weight="bold">Reasons ♥</text>
+            </svg>
+          </div>
+
+          <!-- Pulled Note Display Card -->
+          <div id="reasonCardDisplay" class="w-full min-h-[120px] p-5 rounded-2xl bg-gradient-to-br from-white to-rosewood-50 dark:from-rosewood-950/90 dark:to-rosewood-900/60 border border-rosewood-200 dark:border-rosewood-700/50 shadow-inner flex flex-col items-center justify-center mb-5 transition-all duration-300">
+            <span id="reasonNumberBadge" class="text-[11px] font-bold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-300 mb-1">
+              Reason #1
+            </span>
+            <p id="reasonTextOutput" class="font-serif italic text-lg sm:text-xl text-rosewood-950 dark:text-white leading-snug">
+              "Super duper cute tas chubby cheeks syimpre."
+            </p>
+          </div>
+
+          <button id="pullReasonBtn" class="w-full py-3.5 px-6 rounded-2xl bg-gradient-to-r from-rosewood-600 to-pink-600 hover:from-rosewood-700 hover:to-pink-700 text-white font-semibold shadow-md shadow-rosewood-500/20 active:scale-98 transition-all flex items-center justify-center gap-2">
+            <span>✨ Pull Another Love Note</span>
+          </button>
+        </div>
+
+        <!-- RIGHT COLUMN (7 cols): ROMANTIC LOVE COUPONS -->
+        <div class="lg:col-span-7 glass-card rounded-3xl p-6 sm:p-8 shadow-glass dark:shadow-glass-dark">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6">
+            <div>
+              <span class="text-xs font-semibold uppercase tracking-widest text-rosewood-500 dark:text-rosewood-400 block mb-1">Redeemable Anytime</span>
+              <h3 class="font-serif text-3xl sm:text-4xl font-semibold text-rosewood-950 dark:text-white">
+                Your Monthsarry Love Coupons
+              </h3>
+            </div>
+            <button id="resetCouponsBtn" class="self-start sm:self-auto text-xs font-semibold text-rosewood-600 dark:text-rosewood-300 hover:underline">
+              Reset All Coupons
+            </button>
+          </div>
+
+          <p class="text-xs sm:text-sm text-rosewood-800/75 dark:text-rosewood-200/75 mb-6">
+            Tap any coupon below to claim it! Once redeemed, take a screenshot and send it to me—no expiration date, ever.
+          </p>
+
+          <!-- Coupons Grid -->
+          <div id="couponsGrid" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <!-- Populated dynamically from CONFIG.coupons -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- FOOTER                                                                    -->
+  <!-- ========================================================================= -->
+  <footer class="relative z-10 border-t border-rosewood-200/60 dark:border-rosewood-900/50 py-10 text-center text-xs sm:text-sm text-rosewood-800/70 dark:text-rosewood-200/60">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="font-serif italic text-lg text-rosewood-900 dark:text-rosewood-200 mb-1" id="footerQuote">
+        "In all the world, there is no heart for me like yours."
+      </p>
+      <p>
+        Handcrafted with endless love for <span id="footerCoupleNames" class="font-semibold text-rosewood-700 dark:text-rosewood-300">Jhoncel &amp; Krizel</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ========================================================================= -->
+  <!-- 7. SLEEK FLOATING MINI AUDIO PLAYER (WEB AUDIO API MUSIC BOX)             -->
+  <!-- ========================================================================= -->
+  <div class="fixed bottom-4 left-4 z-40 flex items-center gap-3 p-2.5 pr-4 rounded-2xl glass-card shadow-lg border border-rosewood-200/90 dark:border-rosewood-800/70">
+    <button id="musicToggleBtn" class="w-10 h-10 rounded-xl bg-gradient-to-br from-rosewood-500 to-rosewood-700 text-white flex items-center justify-center shadow-md hover:scale-105 active:scale-95 transition-transform" aria-label="Play or Pause Romantic Music Box">
+      <!-- Play Icon -->
+      <svg id="musicPlayIcon" class="w-5 h-5 ml-0.5" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <!-- Pause Icon -->
+      <svg id="musicPauseIcon" class="w-5 h-5 hidden" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+
+    <div class="flex flex-col">
+      <div class="flex items-center gap-2">
+        <span id="musicTrackTitle" class="text-xs font-semibold text-rosewood-950 dark:text-white">Moonlight Music Box</span>
+        <!-- Equalizer Bars -->
+        <div id="musicEq" class="flex items-end gap-0.5 h-4">
+          <span class="bar-1 w-0.5 h-1.5 bg-rosewood-500 rounded-full transition-all"></span>
+          <span class="bar-2 w-0.5 h-2.5 bg-rosewood-500 rounded-full transition-all"></span>
+          <span class="bar-3 w-0.5 h-1 bg-rosewood-500 rounded-full transition-all"></span>
+          <span class="bar-4 w-0.5 h-2 bg-rosewood-500 rounded-full transition-all"></span>
+        </div>
+      </div>
+      <button id="nextMelodyBtn" class="text-[11px] text-left text-rosewood-600 dark:text-rosewood-300 hover:underline">
+        Switch Melody ↻
+      </button>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 8. FLOATING LIVE CUSTOMIZER BUTTON & DRAWER (GEAR ICON)                   -->
+  <!-- ========================================================================= -->
+  <button id="openCustomizerBtn" class="fixed bottom-4 right-4 z-40 px-4 py-3 rounded-2xl glass-card shadow-lg border border-rosewood-200 dark:border-rosewood-800 text-rosewood-900 dark:text-rosewood-100 hover:bg-rosewood-100 dark:hover:bg-rosewood-900/80 flex items-center gap-2 text-xs sm:text-sm font-semibold transition-all hover:scale-105" title="Customize Names, Date, Letter & Photos">
+    <svg class="w-4 h-4 text-rosewood-600 dark:text-rosewood-400 animate-spin" style="animation-duration: 9s;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+    </svg>
+    <span>Customize Site</span>
+  </button>
+
+  <!-- ========================================================================= -->
+  <!-- LIGHTBOX MODAL FOR POLAROID GALLERY                                       -->
+  <!-- ========================================================================= -->
+  <div id="lightboxModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+    <div class="relative max-w-3xl w-full bg-white dark:bg-[#220a15] rounded-3xl overflow-hidden shadow-2xl border border-rosewood-200/40">
+      <!-- Top Bar -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-rosewood-100 dark:border-rosewood-900/50">
+        <div class="flex items-center gap-2">
+          <span id="lightboxCategory" class="px-3 py-1 rounded-full bg-rosewood-100 dark:bg-rosewood-900 text-rosewood-700 dark:text-rosewood-200 text-xs font-semibold">Dates</span>
+          <span id="lightboxDate" class="text-xs text-rosewood-600/80 dark:text-rosewood-300/80 font-medium"></span>
+        </div>
+        <button id="closeLightboxBtn" class="p-2 rounded-full hover:bg-rosewood-100 dark:hover:bg-rosewood-900 text-rosewood-800 dark:text-rosewood-200 transition-colors" aria-label="Close Lightbox">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Image Container -->
+      <div class="relative bg-black/95 flex items-center justify-center max-h-[65vh] overflow-hidden">
+        <img id="lightboxImage" src="" alt="Memory" class="max-h-[65vh] w-auto object-contain" />
+        <button id="prevLightboxBtn" class="absolute left-3 p-3 rounded-full bg-black/50 hover:bg-black/75 text-white transition-colors" aria-label="Previous photo">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+          </svg>
+        </button>
+        <button id="nextLightboxBtn" class="absolute right-3 p-3 rounded-full bg-black/50 hover:bg-black/75 text-white transition-colors" aria-label="Next photo">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Caption Footer -->
+      <div class="p-6 text-center">
+        <p id="lightboxCaption" class="font-hand text-2xl sm:text-3xl text-rosewood-900 dark:text-rosewood-100"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- ADD LOCAL PHOTO MODAL                                                     -->
+  <!-- ========================================================================= -->
+  <div id="addPhotoModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/70 backdrop-blur-sm">
+    <div class="max-w-md w-full bg-white dark:bg-[#220a15] rounded-3xl p-6 sm:p-8 shadow-2xl border border-rosewood-200 dark:border-rosewood-800">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="font-serif text-2xl font-semibold text-rosewood-950 dark:text-white">Add a Polaroid Memory</h3>
+        <button id="closeAddPhotoModalBtn" class="p-1.5 rounded-xl hover:bg-rosewood-100 dark:hover:bg-rosewood-900 text-rosewood-700 dark:text-rosewood-200">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <form id="addPhotoForm" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1.5">Choose Photo from Device</label>
+          <input type="file" id="photoFileInput" accept="image/*" class="w-full text-xs sm:text-sm file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rosewood-100 file:text-rosewood-700 hover:file:bg-rosewood-200 dark:text-rosewood-200" />
+        </div>
+
+        <div class="text-center text-xs text-rosewood-400">— OR paste an Image URL —</div>
+
+        <div>
+          <input type="url" id="photoUrlInput" placeholder="https://images.unsplash.com/..." class="w-full px-3.5 py-2.5 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/50 dark:bg-rosewood-950/50 text-sm focus:outline-none focus:ring-2 focus:ring-rosewood-500" />
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Memory Caption</label>
+          <input type="text" id="photoCaptionInput" required placeholder="Our sunset coffee date by the bay ☕🌅" class="w-full px-3.5 py-2.5 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/50 dark:bg-rosewood-950/50 text-sm focus:outline-none focus:ring-2 focus:ring-rosewood-500" />
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Date / Month</label>
+            <input type="text" id="photoDateInput" placeholder="Oct 14, 2026" class="w-full px-3.5 py-2.5 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/50 dark:bg-rosewood-950/50 text-sm focus:outline-none focus:ring-2 focus:ring-rosewood-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Category</label>
+            <select id="photoCategoryInput" class="w-full px-3.5 py-2.5 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/50 dark:bg-rosewood-950/50 text-sm focus:outline-none focus:ring-2 focus:ring-rosewood-500">
+              <option value="Dates">Dates</option>
+              <option value="Adventures">Adventures</option>
+              <option value="Silly Moments">Silly Moments</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="w-full py-3 rounded-xl bg-rosewood-600 hover:bg-rosewood-700 text-white font-semibold shadow-md transition-all">
+          Pin to Polaroid Wall
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- LIVE CUSTOMIZER DRAWER MODAL                                              -->
+  <!-- ========================================================================= -->
+  <div id="customizerModal" class="fixed inset-0 z-50 hidden justify-end bg-black/60 backdrop-blur-sm">
+    <div class="w-full max-w-lg bg-white dark:bg-[#1e0812] h-full overflow-y-auto p-6 sm:p-8 shadow-2xl border-l border-rosewood-200 dark:border-rosewood-800 flex flex-col justify-between">
+      <div>
+        <div class="flex items-center justify-between pb-4 mb-6 border-b border-rosewood-200 dark:border-rosewood-800">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-rosewood-500">Personalize Your Gift</span>
+            <h3 class="font-serif text-2xl font-semibold text-rosewood-950 dark:text-white">Live Monthsarry Customizer</h3>
+          </div>
+          <button id="closeCustomizerBtn" class="p-2 rounded-xl hover:bg-rosewood-100 dark:hover:bg-rosewood-900 text-rosewood-700 dark:text-rosewood-200">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+
+        <form id="customizerForm" class="space-y-4">
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Jhoncel</label>
+              <input type="text" id="custHisName" class="w-full px-3.5 py-2 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/40 dark:bg-rosewood-950/50 text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Krizel</label>
+              <input type="text" id="custHerName" class="w-full px-3.5 py-2 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/40 dark:bg-rosewood-950/50 text-sm" />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Relationship Start Date</label>
+              <input type="date" id="custStartDate" class="w-full px-3.5 py-2 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/40 dark:bg-rosewood-950/50 text-sm" />
+            </div>
+            <div>
+              <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Hero Badge Text</label>
+              <input type="text" id="custBadgeText" placeholder="Happy 17th Monthsarry!" class="w-full px-3.5 py-2 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/40 dark:bg-rosewood-950/50 text-sm" />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Hero Subtitle Message</label>
+            <textarea id="custSubtitle" rows="2" class="w-full px-3.5 py-2 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/40 dark:bg-rosewood-950/50 text-sm"></textarea>
+          </div>
+
+          <div>
+            <label class="block text-xs font-semibold uppercase tracking-wider text-rosewood-700 dark:text-rosewood-300 mb-1">Love Letter Full Message</label>
+            <textarea id="custLetterBody" rows="6" class="w-full px-3.5 py-2 rounded-xl border border-rosewood-200 dark:border-rosewood-800 bg-rosewood-50/40 dark:bg-rosewood-950/50 text-sm"></textarea>
+          </div>
+
+          <div class="pt-2 flex flex-col sm:flex-row gap-2.5">
+            <button type="submit" class="flex-1 py-3 px-4 rounded-xl bg-rosewood-600 hover:bg-rosewood-700 text-white font-semibold text-sm shadow-md transition-all">
+              Save &amp; Apply Changes
+            </button>
+            <button type="button" id="copyConfigJsonBtn" class="py-3 px-4 rounded-xl bg-rosewood-100 dark:bg-rosewood-900 text-rosewood-800 dark:text-rosewood-200 hover:bg-rosewood-200 text-xs font-semibold transition-all">
+              Copy CONFIG Code
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="mt-8 pt-4 border-t border-rosewood-200/60 dark:border-rosewood-800/50 flex items-center justify-between text-xs text-rosewood-600 dark:text-rosewood-300">
+        <span>Saved automatically in your browser</span>
+        <button id="resetDefaultConfigBtn" class="text-rosewood-500 hover:underline font-medium">Reset to Defaults</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- CUSTOM TOAST NOTIFICATION                                                 -->
+  <!-- ========================================================================= -->
+  <div id="toastNotification" class="fixed top-20 right-4 z-50 transform translate-x-96 opacity-0 transition-all duration-300 px-5 py-3 rounded-2xl bg-rosewood-900 text-white text-sm font-medium shadow-xl flex items-center gap-2.5 pointer-events-none">
+    <span id="toastIcon">💖</span>
+    <span id="toastMessage">Saved!</span>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- JAVASCRIPT: CENTRAL CONFIG & INTERACTIVE APPLICATION LOGIC                -->
+  <!-- ========================================================================= -->
+  <script>
+    /**
+     * =========================================================================
+     * 1. CENTRAL CONFIGURATION OBJECT (EDIT THIS TO CUSTOMIZE PERMANENTLY)
+     * =========================================================================
+     * Replace the names, startDate (YYYY-MM-DD), love letter, photos, milestones,
+     * reasons, and coupons below—or use the "Customize Site" button in the corner!
+     */
+    const DEFAULT_CONFIG = {
+      couple: {
+        hisName: "Jhoncel",
+        herName: "Krizel",
+        startDate: "2025-08-15", // Format: YYYY-MM-DD
+        monthsarryBadge: "Happy Monthsarry, My Love",
+        heroSubtitle: "Every day with you feels like my favorite chapter. Here is to celebrating every laugh, every late-night talk, and every adventure we have shared so far."
+      },
+
+      letter: {
+        dateStamp: "Our Special Monthsarry",
+        salutation: "My Dearest Krizel,",
+        body: `Happy Monthsarry, baby! Looking back at all the days we have spent together, I still find myself smiling at how lucky I am to call you mine.\n\nThank you for being my safe place, my favorite adventure partner, and the person who makes even the simplest errands feel like a romantic movie. Whether we are dressing up for a fancy dinner, getting lost on a spontaneous road trip, or just laughing at silly jokes late at night, every single second with you is priceless.\n\nI promise to keep choosing you, cheering for your dreams, holding your hand through every season, and loving you more with each passing month.`,
+        signOff: "Jhoncel ♥"
+      },
+
+      photos: [
+        {
+          id: 1,
+          url: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=80",
+          caption: "Golden hour walks where I couldn't stop looking at you 🌅",
+          date: "First Summer Together",
+          category: "Dates",
+          rotation: "-2.5deg"
+        },
+        {
+          id: 2,
+          url: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80",
+          caption: "Coffee & pastry mornings—always better across from you ☕🥐",
+          date: "Sunday Cozy Date",
+          category: "Dates",
+          rotation: "2deg"
+        },
+        {
+          id: 3,
+          url: "https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?auto=format&fit=crop&w=900&q=80",
+          caption: "That time we laughed so hard we couldn't take a serious photo 😂",
+          date: "Unfiltered Joy",
+          category: "Silly Moments",
+          rotation: "-1.5deg"
+        },
+        {
+          id: 4,
+          url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
+          caption: "Chasing waves and making wishes by the ocean 🌊🐚",
+          date: "Beach Getaway",
+          category: "Adventures",
+          rotation: "2.8deg"
+        },
+        {
+          id: 5,
+          url: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?auto=format&fit=crop&w=900&q=80",
+          caption: "Late night sparklers and stargazing under the open sky ✨",
+          date: "Midnight Magic",
+          category: "Adventures",
+          rotation: "-2deg"
+        },
+        {
+          id: 6,
+          url: "https://images.unsplash.com/photo-1494774157365-9e04c6720e47?auto=format&fit=crop&w=900&q=80",
+          caption: "Holding your hand is still my favorite thing in the world 🤍",
+          date: "Every Single Day",
+          category: "Silly Moments",
+          rotation: "1.8deg"
+        }
+      ],
+
+      timeline: [
+        {
+          date: "The First Spark",
+          title: "Where It All Began",
+          tag: "Day Zero",
+          icon: "✨",
+          description: "That unforgettable first conversation when hours felt like minutes, and I secretly knew my life had just changed forever."
+        },
+        {
+          date: "Our First Official Date",
+          title: "Nervous Smiles & Endless Laughs",
+          tag: "First Date",
+          icon: "☕",
+          description: "I spent way too long picking my outfit, only to forget everything the moment I saw you walk in with that gorgeous smile."
+        },
+        {
+          date: "June 16, 2025",
+          title: "Officially Us",
+          tag: "Anniversary Start",
+          icon: "💖",
+          description: "The day you said yes to being mine—hands down the happiest milestone of my life."
+        },
+        {
+          date: "First Out-of-Town Trip",
+          title: "Our Favorite Adventure",
+          tag: "Roadtrip",
+          icon: "🌅",
+          description: "Singing at the top of our lungs in the car, trying new food spots, and watching the sunset side by side."
+        },
+        {
+          date: "Today & Beyond",
+          title: "Celebrating Our Monthsarry",
+          tag: "Present Chapter",
+          icon: "🥂",
+          description: "Still falling harder for you every day, and counting down to all the adventures waiting ahead of us."
+        }
+      ],
+
+      reasons: [
+        "The way your eyes light up whenever you talk about something you are passionate about.",
+        "How safe, calm, and at home I feel the moment you wrap your arms around me.",
+        "Your contagious laugh that instantly fixes my worst days.",
+        "How thoughtful and kind you are to the people you care about.",
+        "The cute faces you make when you taste really good food!",
+        "Because you listen to my random rants and still look at me like I am your favorite person.",
+        "How effortlessly beautiful you look both dressed up and in your cozy oversized hoodie.",
+        "The way you hold my hand a little tighter when we walk through a crowd.",
+        "Because every song about love suddenly made sense the day I met you.",
+        "Your ambition, your big heart, and how you inspire me to become a better man every day.",
+        "Even doing absolutely nothing with you is better than doing anything with anyone else.",
+        "Because you are not just my girlfriend—you are my best friend and my favorite peace."
+      ],
+
+      coupons: [
+        {
+          id: "c1",
+          emoji: "🍜",
+          title: "Unli Food Trip on Me",
+          subtitle: "Craving ramen, samgyup, or street food? Pick the spot and it's 100% my treat.",
+          redeemed: false
+        },
+        {
+          id: "c2",
+          emoji: "🎬",
+          title: "Movie Marathon Boss",
+          subtitle: "You pick the movies, I bring your favorite snacks and zero complaints.",
+          redeemed: false
+        },
+        {
+          id: "c3",
+          emoji: "🏳️",
+          title: "Win Any Argument Pass",
+          subtitle: "Play this card anytime to immediately win a debate with an instant hug & kiss.",
+          redeemed: false
+        },
+        {
+          id: "c4",
+          emoji: "🍦",
+          title: "Late Night Ice Cream Drive",
+          subtitle: "Redeemable for a spontaneous midnight drive, playlist vibes & sweet treats.",
+          redeemed: false
+        },
+        {
+          id: "c5",
+          emoji: "💆‍♀️",
+          title: "30-Min Massage & Cuddles",
+          subtitle: "After a long tiring day, claim a full shoulder/back massage and forehead kisses.",
+          redeemed: false
+        },
+        {
+          id: "c6",
+          emoji: "👑",
+          title: "Full 'Yes Day' Queen Pass",
+          subtitle: "For one whole date day, whatever you say goes—your schedule, your rules!",
+          redeemed: false
+        }
+      ]
+    };
+
+    // Load saved config from localStorage or fall back to DEFAULT_CONFIG
+    const STORAGE_KEY = "monthsarry_surprise_config_v1";
+    let CONFIG = loadConfig();
+
+    function loadConfig() {
+      try {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved) {
+          const parsed = JSON.parse(saved);
+          return {
+            ...DEFAULT_CONFIG,
+            ...parsed,
+            couple: { ...DEFAULT_CONFIG.couple, ...(parsed.couple || {}) },
+            letter: { ...DEFAULT_CONFIG.letter, ...(parsed.letter || {}) }
+          };
+        }
+      } catch (err) {
+        console.warn("Could not read saved config, using default:", err);
+      }
+      return JSON.parse(JSON.stringify(DEFAULT_CONFIG));
+    }
+
+    function saveConfig() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(CONFIG));
+      } catch (err) {
+        console.warn("Storage limit reached (likely large uploaded image):", err);
+      }
+    }
+
+    /**
+     * =========================================================================
+     * 2. TOAST NOTIFICATION HELPER (NO ALERT/CONFIRM)
+     * =========================================================================
+     */
+    let toastTimeout = null;
+    function showToast(message, icon = "💖") {
+      const toast = document.getElementById("toastNotification");
+      const toastMsg = document.getElementById("toastMessage");
+      const toastIc = document.getElementById("toastIcon");
+      toastMsg.textContent = message;
+      toastIc.textContent = icon;
+
+      toast.classList.remove("translate-x-96", "opacity-0");
+      toast.classList.add("translate-x-0", "opacity-100");
+
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => {
+        toast.classList.remove("translate-x-0", "opacity-100");
+        toast.classList.add("translate-x-96", "opacity-0");
+      }, 3200);
+    }
+
+    /**
+     * =========================================================================
+     * 3. RENDER CONTENT FROM CONFIG
+     * =========================================================================
+     */
+    let currentFilter = "all";
+    let currentLightboxIndex = 0;
+    let filteredPhotosList = [];
+
+    function renderAllContent() {
+      const { hisName, herName, startDate, monthsarryBadge, heroSubtitle } = CONFIG.couple;
+
+      // Welcome Gate & Nav
+      document.getElementById("gateHerName").textContent = herName;
+      const initials = `${(hisName[0] || "M").toUpperCase()}&${(herName[0] || "S").toUpperCase()}`;
+      document.getElementById("navInitials").textContent = initials;
+      document.getElementById("navCoupleTitle").textContent = `${hisName} & ${herName}`;
+
+      // Hero Section
+      document.getElementById("heroMonthsarryBadge").textContent = monthsarryBadge;
+      document.getElementById("heroHisName").textContent = hisName;
+      document.getElementById("heroHerName").textContent = herName;
+      document.getElementById("heroSubtitle").textContent = heroSubtitle;
+
+      // Format Start Date nicely
+      const parsedStart = new Date(startDate + "T00:00:00");
+      if (!isNaN(parsedStart)) {
+        document.getElementById("startDateFormatted").textContent = parsedStart.toLocaleDateString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric"
+        });
+      }
+
+      // Letter Placeholders
+      document.querySelectorAll(".letterHerNamePlaceholder").forEach(el => {
+        el.textContent = herName;
+      });
+      document.getElementById("letterDateStamp").textContent = CONFIG.letter.dateStamp;
+      document.getElementById("letterSalutation").textContent = `My Dearest ${herName},`;
+      document.getElementById("letterSignOffName").textContent = `${hisName} ♥`;
+
+      // Footer
+      document.getElementById("footerCoupleNames").textContent = `${hisName} & ${herName}`;
+
+      // Render Sections
+      renderPolaroidGallery();
+      renderTimeline();
+      renderCoupons();
+      updateLiveRelationshipCounter();
+    }
+
+    /**
+     * =========================================================================
+     * 4. LIVE RELATIONSHIP COUNTER (MONTHS, DAYS, HOURS, MINUTES, SECONDS)
+     * =========================================================================
+     */
+    function updateLiveRelationshipCounter() {
+      const startStr = CONFIG.couple.startDate || "2025-06-16";
+      const start = new Date(startStr + "T00:00:00");
+      const now = new Date();
+
+      if (isNaN(start.getTime())) return;
+
+      const diffMs = Math.max(0, now - start);
+      const totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+      // Calculate exact calendar months + remaining days
+      let months = (now.getFullYear() - start.getFullYear()) * 12 + (now.getMonth() - start.getMonth());
+      let anchorDate = new Date(start.getFullYear(), start.getMonth() + months, start.getDate());
+
+      if (now < anchorDate) {
+        months -= 1;
+        anchorDate = new Date(start.getFullYear(), start.getMonth() + months, start.getDate());
+      }
+
+      const remMs = Math.max(0, now - anchorDate);
+      const days = Math.floor(remMs / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((remMs / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((remMs / (1000 * 60)) % 60);
+      const seconds = Math.floor((remMs / 1000) % 60);
+
+      document.getElementById("countMonths").textContent = Math.max(0, months);
+      document.getElementById("countDays").textContent = Math.max(0, days);
+      document.getElementById("countHours").textContent = String(hours).padStart(2, "0");
+      document.getElementById("countMinutes").textContent = String(minutes).padStart(2, "0");
+      document.getElementById("countSeconds").textContent = String(seconds).padStart(2, "0");
+      document.getElementById("totalDaysTogether").textContent = totalDays.toLocaleString();
+
+      // Next Monthsarry day check
+      const startDayOfMonth = start.getDate();
+      if (now.getDate() === startDayOfMonth) {
+        document.getElementById("nextMonthsarryCountdown").innerHTML = `<strong class="text-rosewood-600 dark:text-rosewood-300">Today is our Monthsarry! 🎉💖</strong>`;
+      } else {
+        let nextMonthsarry = new Date(now.getFullYear(), now.getMonth(), startDayOfMonth);
+        if (nextMonthsarry < now) {
+          nextMonthsarry = new Date(now.getFullYear(), now.getMonth() + 1, startDayOfMonth);
+        }
+        const daysUntil = Math.ceil((nextMonthsarry - now) / (1000 * 60 * 60 * 24));
+        document.getElementById("nextMonthsarryCountdown").textContent = `${daysUntil} day${daysUntil === 1 ? "" : "s"} until our next Monthsarry (${startDayOfMonth}th of the month)`;
+      }
+    }
+
+    setInterval(updateLiveRelationshipCounter, 1000);
+
+    /**
+     * =========================================================================
+     * 5. POLAROID GALLERY & LIGHTBOX
+     * =========================================================================
+     */
+    function renderPolaroidGallery() {
+      const grid = document.getElementById("polaroidGrid");
+      filteredPhotosList = currentFilter === "all"
+        ? CONFIG.photos
+        : CONFIG.photos.filter(p => p.category === currentFilter);
+
+      if (filteredPhotosList.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full py-12 text-center glass-card rounded-3xl">
+            <p class="text-rosewood-700 dark:text-rosewood-300 font-serif text-2xl">No photos in this category yet ✨</p>
+            <p class="text-xs text-rosewood-500 mt-1">Click "+ Add Our Photo" above to pin a memory here!</p>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filteredPhotosList.map((photo, index) => {
+        const rot = photo.rotation || (index % 2 === 0 ? "-2deg" : "2deg");
+        const fallbackUrl = `https://placehold.co/600x600/ffe8ed/bd184b?text=Our+Memory+%E2%99%A5`;
+        return `
+          <article
+            class="polaroid-card relative bg-white dark:bg-[#280c19] p-4 pb-6 rounded-2xl shadow-polaroid border border-rosewood-100/80 dark:border-rosewood-800/40 cursor-pointer group select-none"
+            style="transform: rotate(${rot});"
+            onclick="openLightbox(${index})"
+          >
+            <div class="washi-tape"></div>
+
+            <!-- Image Wrapper -->
+            <div class="relative aspect-[4/4] w-full rounded-xl overflow-hidden bg-rosewood-100 dark:bg-rosewood-950 mb-4">
+              <img
+                src="${photo.url}"
+                alt="${photo.caption.replace(/"/g, '&quot;')}"
+                onerror="this.onerror=null;this.src='${fallbackUrl}';"
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
+              <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-black/45 backdrop-blur-md text-white text-[11px] font-medium">
+                ${photo.category}
+              </div>
+              <div class="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-white/85 dark:bg-black/65 backdrop-blur-md text-rosewood-900 dark:text-rosewood-100 text-[11px] font-semibold">
+                ${photo.date}
+              </div>
+            </div>
+
+            <!-- Handwritten Caption -->
+            <p class="font-hand text-2xl text-rosewood-950 dark:text-rosewood-100 text-center leading-snug px-2">
+              ${photo.caption}
+            </p>
+          </article>
+        `;
+      }).join("");
+    }
+
+    // Filter Tab Click Handlers
+    document.querySelectorAll("#galleryFilterTabs .filter-tab").forEach(btn => {
+      btn.addEventListener("click", () => {
+        currentFilter = btn.getAttribute("data-filter");
+        document.querySelectorAll("#galleryFilterTabs .filter-tab").forEach(b => {
+          b.className = "filter-tab px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all glass-card text-rosewood-800 dark:text-rosewood-200 hover:bg-rosewood-100/60 dark:hover:bg-rosewood-900/40";
+        });
+        btn.className = "filter-tab active px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all bg-rosewood-600 text-white shadow-sm";
+        renderPolaroidGallery();
+      });
+    });
+
+    // Lightbox Functions
+    window.openLightbox = function(index) {
+      if (!filteredPhotosList[index]) return;
+      currentLightboxIndex = index;
+      updateLightboxView();
+      const modal = document.getElementById("lightboxModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+    };
+
+    function updateLightboxView() {
+      const item = filteredPhotosList[currentLightboxIndex];
+      if (!item) return;
+      document.getElementById("lightboxImage").src = item.url;
+      document.getElementById("lightboxCaption").textContent = item.caption;
+      document.getElementById("lightboxDate").textContent = item.date;
+      document.getElementById("lightboxCategory").textContent = item.category;
+    }
+
+    function closeLightbox() {
+      const modal = document.getElementById("lightboxModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+    }
+
+    document.getElementById("closeLightboxBtn").addEventListener("click", closeLightbox);
+    document.getElementById("lightboxModal").addEventListener("click", (e) => {
+      if (e.target.id === "lightboxModal") closeLightbox();
+    });
+    document.getElementById("prevLightboxBtn").addEventListener("click", (e) => {
+      e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex - 1 + filteredPhotosList.length) % filteredPhotosList.length;
+      updateLightboxView();
+    });
+    document.getElementById("nextLightboxBtn").addEventListener("click", (e) => {
+      e.stopPropagation();
+      currentLightboxIndex = (currentLightboxIndex + 1) % filteredPhotosList.length;
+      updateLightboxView();
+    });
+
+    // Add Local Photo Modal Logic
+    const addPhotoModal = document.getElementById("addPhotoModal");
+    document.getElementById("openAddPhotoModalBtn").addEventListener("click", () => {
+      addPhotoModal.classList.remove("hidden");
+      addPhotoModal.classList.add("flex");
+    });
+    document.getElementById("closeAddPhotoModalBtn").addEventListener("click", () => {
+      addPhotoModal.classList.add("hidden");
+      addPhotoModal.classList.remove("flex");
+    });
+
+    document.getElementById("addPhotoForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fileInput = document.getElementById("photoFileInput");
+      const urlInput = document.getElementById("photoUrlInput").value.trim();
+      const caption = document.getElementById("photoCaptionInput").value.trim() || "Our special memory ♥";
+      const date = document.getElementById("photoDateInput").value.trim() || "Memorable Day";
+      const category = document.getElementById("photoCategoryInput").value;
+
+      const addNewPhotoEntry = (finalUrl) => {
+        CONFIG.photos.unshift({
+          id: Date.now(),
+          url: finalUrl,
+          caption,
+          date,
+          category,
+          rotation: (Math.random() * 4 - 2).toFixed(1) + "deg"
+        });
+        saveConfig();
+        renderPolaroidGallery();
+        addPhotoModal.classList.add("hidden");
+        addPhotoModal.classList.remove("flex");
+        document.getElementById("addPhotoForm").reset();
+        showToast("New Polaroid memory pinned!", "📸");
+      };
+
+      if (fileInput.files && fileInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(evt) {
+          addNewPhotoEntry(evt.target.result);
+        };
+        reader.readAsDataURL(fileInput.files[0]);
+      } else if (urlInput) {
+        addNewPhotoEntry(urlInput);
+      } else {
+        showToast("Please choose an image file or paste a photo URL", "✨");
+      }
+    });
+
+    /**
+     * =========================================================================
+     * 6. "OUR STORY" ANIMATED TIMELINE & SCROLL REVEAL
+     * =========================================================================
+     */
+    function renderTimeline() {
+      const container = document.getElementById("timelineContainer");
+      container.innerHTML = CONFIG.timeline.map((item, idx) => {
+        const isLeft = idx % 2 === 0;
+        return `
+          <div class="reveal-item relative flex items-start sm:items-center justify-between sm:justify-normal ${isLeft ? 'sm:flex-row' : 'sm:flex-row-reverse'} group">
+            <!-- Timeline Card (Desktop Half Width) -->
+            <div class="w-full pl-16 sm:pl-0 sm:w-[45%]">
+              <div class="glass-card p-6 rounded-3xl shadow-glass dark:shadow-glass-dark hover:-translate-y-1 transition-transform duration-300 border border-rosewood-200/70 dark:border-rosewood-800/50">
+                <div class="flex items-center justify-between gap-2 mb-2">
+                  <span class="text-xs font-bold uppercase tracking-widest text-rosewood-600 dark:text-rosewood-300">${item.date}</span>
+                  <span class="px-2.5 py-0.5 rounded-full bg-rosewood-100 dark:bg-rosewood-900/70 text-rosewood-700 dark:text-rosewood-200 text-[11px] font-semibold">${item.tag}</span>
+                </div>
+                <h3 class="font-serif text-2xl font-semibold text-rosewood-950 dark:text-white mb-2">${item.title}</h3>
+                <p class="text-sm text-rosewood-800/80 dark:text-rosewood-200/80 leading-relaxed">${item.description}</p>
+              </div>
+            </div>
+
+            <!-- Center Icon Badge -->
+            <div class="absolute left-0 sm:left-1/2 transform sm:-translate-x-1/2 w-12 h-12 rounded-2xl bg-gradient-to-br from-rosewood-500 to-rosewood-700 text-white flex items-center justify-center shadow-lg shadow-rosewood-500/30 border-4 border-champagne-50 dark:border-[#16050d] text-xl z-10">
+              ${item.icon}
+            </div>
+
+            <!-- Empty Spacer for Other Side -->
+            <div class="hidden sm:block sm:w-[45%]"></div>
+          </div>
+        `;
+      }).join("");
+
+      observeRevealItems();
+    }
+
+    function observeRevealItems() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+          }
+        });
+      }, { threshold: 0.15 });
+
+      document.querySelectorAll(".reveal-item").forEach(el => observer.observe(el));
+    }
+
+    /**
+     * =========================================================================
+     * 7. INTERACTIVE LOVE LETTER (TYPEWRITER EFFECT)
+     * =========================================================================
+     */
+    let typewriterTimer = null;
+    let charIndex = 0;
+
+    function startLetterTypewriter() {
+      const bodyEl = document.getElementById("letterTypewriterBody");
+      const sigBlock = document.getElementById("letterSignatureBlock");
+      const fullText = CONFIG.letter.body;
+
+      if (typewriterTimer) clearInterval(typewriterTimer);
+      charIndex = 0;
+      bodyEl.textContent = "";
+      bodyEl.classList.add("typewriter-cursor");
+      sigBlock.classList.add("opacity-0");
+
+      typewriterTimer = setInterval(() => {
+        if (charIndex < fullText.length) {
+          bodyEl.textContent += fullText.charAt(charIndex);
+          charIndex++;
+        } else {
+          finishLetterTypewriter();
+        }
+      }, 24);
+    }
+
+    function finishLetterTypewriter() {
+      if (typewriterTimer) clearInterval(typewriterTimer);
+      const bodyEl = document.getElementById("letterTypewriterBody");
+      const sigBlock = document.getElementById("letterSignatureBlock");
+      bodyEl.textContent = CONFIG.letter.body;
+      bodyEl.classList.remove("typewriter-cursor");
+      sigBlock.classList.remove("opacity-0");
+    }
+
+    document.getElementById("unfoldLetterBtn").addEventListener("click", () => {
+      document.getElementById("letterEnvelopeCard").classList.add("hidden");
+      const paperCard = document.getElementById("letterPaperCard");
+      paperCard.classList.remove("hidden");
+      startLetterTypewriter();
+      triggerHeartConfetti(window.innerWidth / 2, window.innerHeight / 2, 22);
+    });
+
+    document.getElementById("showFullLetterBtn").addEventListener("click", finishLetterTypewriter);
+    document.getElementById("replayLetterBtn").addEventListener("click", startLetterTypewriter);
+
+    /**
+     * =========================================================================
+     * 8. INTERACTIVE "JAR OF REASONS" & LOVE COUPONS
+     * =========================================================================
+     */
+    let currentReasonIndex = 0;
+
+    function pullNextReason() {
+      const reasons = CONFIG.reasons;
+      if (!reasons || reasons.length === 0) return;
+
+      currentReasonIndex = (currentReasonIndex + 1) % reasons.length;
+      const card = document.getElementById("reasonCardDisplay");
+      const badge = document.getElementById("reasonNumberBadge");
+      const text = document.getElementById("reasonTextOutput");
+
+      card.classList.add("scale-95", "opacity-60");
+      setTimeout(() => {
+        badge.textContent = `Reason #${currentReasonIndex + 1} of ${reasons.length}`;
+        text.textContent = `"${reasons[currentReasonIndex]}"`;
+        card.classList.remove("scale-95", "opacity-60");
+      }, 160);
+    }
+
+    document.getElementById("pullReasonBtn").addEventListener("click", (e) => {
+      pullNextReason();
+      const rect = e.currentTarget.getBoundingClientRect();
+      triggerHeartConfetti(rect.left + rect.width / 2, rect.top, 14);
+    });
+    document.getElementById("loveJarGraphic").addEventListener("click", (e) => {
+      pullNextReason();
+      const rect = e.currentTarget.getBoundingClientRect();
+      triggerHeartConfetti(rect.left + rect.width / 2, rect.top + 40, 18);
+    });
+
+    // Render Love Coupons
+    function renderCoupons() {
+      const grid = document.getElementById("couponsGrid");
+      grid.innerHTML = CONFIG.coupons.map((coupon, index) => {
+        const isRedeemed = Boolean(coupon.redeemed);
+        return `
+          <div
+            onclick="toggleRedeemCoupon(${index}, event)"
+            class="coupon-ticket cursor-pointer rounded-2xl p-5 border-2 border-dashed transition-all select-none ${
+              isRedeemed
+                ? 'bg-rosewood-100/50 dark:bg-rosewood-950/40 border-rosewood-300 dark:border-rosewood-800 opacity-75'
+                : 'bg-white dark:bg-[#260b18] border-rosewood-300 dark:border-rosewood-700 hover:border-rosewood-500 hover:-translate-y-1 shadow-sm'
+            }"
+          >
+            <div class="flex items-start justify-between gap-3">
+              <span class="text-3xl">${coupon.emoji}</span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-widest ${
+                isRedeemed
+                  ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-950 dark:text-emerald-300'
+                  : 'bg-rosewood-100 text-rosewood-700 dark:bg-rosewood-900 dark:text-rosewood-200'
+              }">
+                ${isRedeemed ? '✓ Claimed' : 'Tap to Claim'}
+              </span>
+            </div>
+            <h4 class="font-serif text-xl font-semibold text-rosewood-950 dark:text-white mt-3 ${isRedeemed ? 'line-through' : ''}">
+              ${coupon.title}
+            </h4>
+            <p class="text-xs text-rosewood-800/75 dark:text-rosewood-200/75 mt-1 leading-relaxed">
+              ${coupon.subtitle}
+            </p>
+          </div>
+        `;
+      }).join("");
+    }
+
+    window.toggleRedeemCoupon = function(index, evt) {
+      const coupon = CONFIG.coupons[index];
+      if (!coupon) return;
+      coupon.redeemed = !coupon.redeemed;
+      saveConfig();
+      renderCoupons();
+
+      if (coupon.redeemed) {
+        const x = evt ? evt.clientX : window.innerWidth / 2;
+        const y = evt ? evt.clientY : window.innerHeight / 2;
+        triggerHeartConfetti(x, y, 28);
+        showToast(`Coupon Claimed: "${coupon.title}"! Screenshot & send to ${CONFIG.couple.hisName} 💖`, "🎟️");
+      } else {
+        showToast(`Coupon "${coupon.title}" marked available again`, "✨");
+      }
+    };
+
+    document.getElementById("resetCouponsBtn").addEventListener("click", () => {
+      CONFIG.coupons.forEach(c => c.redeemed = false);
+      saveConfig();
+      renderCoupons();
+      showToast("All Love Coupons reset and ready to claim!", "🎟️");
+    });
+
+    /**
+     * =========================================================================
+     * 9. WEB AUDIO API ROMANTIC MUSIC BOX SYNTHESIZER (100% OFFLINE)
+     * =========================================================================
+     */
+    let audioCtx = null;
+    let isMusicPlaying = false;
+    let melodyTimer = null;
+    let noteStep = 0;
+    let currentMelodyIndex = 0;
+
+    const MELODIES = [
+      {
+        title: "Moonlight Music Box",
+        tempoMs: 420,
+        // Gentle romantic arpeggiated frequencies (C major / A minor / F major / G major)
+        notes: [
+          523.25, 659.25, 783.99, 1046.50, 783.99, 659.25,
+          440.00, 523.25, 659.25, 880.00, 659.25, 523.25,
+          349.23, 440.00, 523.25, 698.46, 523.25, 440.00,
+          392.00, 493.88, 587.33, 783.99, 587.33, 493.88
+        ]
+      },
+      {
+        title: "Starlight Waltz Box",
+        tempoMs: 360,
+        notes: [
+          587.33, 739.99, 880.00, 1174.66, 880.00, 739.99,
+          493.88, 587.33, 739.99, 987.77, 739.99, 587.33,
+          392.00, 493.88, 587.33, 783.99, 587.33, 493.88,
+          440.00, 554.37, 659.25, 880.00, 659.25, 554.37
+        ]
+      }
+    ];
+
+    function playMusicBoxChime(freq) {
+      if (!audioCtx) return;
+      const now = audioCtx.currentTime;
+
+      // Primary bell sine oscillator
+      const osc = audioCtx.createOscillator();
+      const overtone = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const overtoneGain = audioCtx.createGain();
+
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(freq, now);
+
+      // Soft harmonic overtone for music-box sparkle
+      overtone.type = "triangle";
+      overtone.frequency.setValueAtTime(freq * 2, now);
+
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.exponentialRampToValueAtTime(0.08, now + 0.025);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 1.65);
+
+      overtoneGain.gain.setValueAtTime(0.001, now);
+      overtoneGain.gain.exponentialRampToValueAtTime(0.018, now + 0.015);
+      overtoneGain.gain.exponentialRampToValueAtTime(0.0001, now + 0.65);
+
+      osc.connect(gain);
+      overtone.connect(overtoneGain);
+      gain.connect(audioCtx.destination);
+      overtoneGain.connect(audioCtx.destination);
+
+      osc.start(now);
+      overtone.start(now);
+      osc.stop(now + 1.7);
+      overtone.stop(now + 0.7);
+    }
+
+    function startMusicBox() {
+      try {
+        if (!audioCtx) {
+          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+          audioCtx = new AudioContextClass();
+        }
+        if (audioCtx.state === "suspended") {
+          audioCtx.resume();
+        }
+        isMusicPlaying = true;
+        updateMusicUI();
+
+        if (melodyTimer) clearInterval(melodyTimer);
+        const currentMelody = MELODIES[currentMelodyIndex];
+        melodyTimer = setInterval(() => {
+          if (!isMusicPlaying) return;
+          const freq = currentMelody.notes[noteStep % currentMelody.notes.length];
+          playMusicBoxChime(freq);
+          noteStep++;
+        }, currentMelody.tempoMs);
+      } catch (e) {
+        console.warn("Web Audio API could not start automatically:", e);
+      }
+    }
+
+    function pauseMusicBox() {
+      isMusicPlaying = false;
+      if (melodyTimer) clearInterval(melodyTimer);
+      updateMusicUI();
+    }
+
+    function updateMusicUI() {
+      const playIcon = document.getElementById("musicPlayIcon");
+      const pauseIcon = document.getElementById("musicPauseIcon");
+      const eq = document.getElementById("musicEq");
+      const title = document.getElementById("musicTrackTitle");
+
+      title.textContent = MELODIES[currentMelodyIndex].title;
+      if (isMusicPlaying) {
+        playIcon.classList.add("hidden");
+        pauseIcon.classList.remove("hidden");
+        eq.classList.add("eq-playing");
+      } else {
+        playIcon.classList.remove("hidden");
+        pauseIcon.classList.add("hidden");
+        eq.classList.remove("eq-playing");
+      }
+    }
+
+    document.getElementById("musicToggleBtn").addEventListener("click", () => {
+      if (isMusicPlaying) {
+        pauseMusicBox();
+      } else {
+        startMusicBox();
+      }
+    });
+
+    document.getElementById("nextMelodyBtn").addEventListener("click", () => {
+      currentMelodyIndex = (currentMelodyIndex + 1) % MELODIES.length;
+      noteStep = 0;
+      if (isMusicPlaying) {
+        startMusicBox();
+      } else {
+        updateMusicUI();
+      }
+      showToast(`Switched to ${MELODIES[currentMelodyIndex].title}`, "🎵");
+    });
+
+    /**
+     * =========================================================================
+     * 10. WELCOME GATE OVERLAY & DARK MODE TOGGLE
+     * =========================================================================
+     */
+    function openWelcomeGate() {
+      const gate = document.getElementById("welcomeGate");
+      gate.classList.add("opacity-0", "pointer-events-none", "scale-105");
+      startMusicBox();
+      triggerHeartConfetti(window.innerWidth / 2, window.innerHeight / 2, 36);
+      setTimeout(() => {
+        gate.style.display = "none";
+      }, 950);
+    }
+
+    document.getElementById("openSurpriseBtn").addEventListener("click", openWelcomeGate);
+    document.getElementById("envelopeTrigger").addEventListener("click", openWelcomeGate);
+
+    // Dark Mode Toggle
+    document.getElementById("themeToggleBtn").addEventListener("click", () => {
+      document.documentElement.classList.toggle("dark");
+      const isDark = document.documentElement.classList.contains("dark");
+      showToast(isDark ? "Romantic Evening Mode enabled 🌙" : "Warm Daylight Mode enabled ☀️", isDark ? "🌙" : "☀️");
+    });
+
+    // Shower Love Button
+    document.getElementById("sendLoveBurstBtn").addEventListener("click", (e) => {
+      const rect = e.currentTarget.getBoundingClientRect();
+      triggerHeartConfetti(rect.left + rect.width / 2, rect.bottom + 10, 32);
+    });
+
+    /**
+     * =========================================================================
+     * 11. LIVE CUSTOMIZER DRAWER LOGIC
+     * =========================================================================
+     */
+    const customizerModal = document.getElementById("customizerModal");
+
+    function openCustomizer() {
+      document.getElementById("custHisName").value = CONFIG.couple.hisName;
+      document.getElementById("custHerName").value = CONFIG.couple.herName;
+      document.getElementById("custStartDate").value = CONFIG.couple.startDate;
+      document.getElementById("custBadgeText").value = CONFIG.couple.monthsarryBadge;
+      document.getElementById("custSubtitle").value = CONFIG.couple.heroSubtitle;
+      document.getElementById("custLetterBody").value = CONFIG.letter.body;
+
+      customizerModal.classList.remove("hidden");
+      customizerModal.classList.add("flex");
+    }
+
+    function closeCustomizer() {
+      customizerModal.classList.add("hidden");
+      customizerModal.classList.remove("flex");
+    }
+
+    document.getElementById("openCustomizerBtn").addEventListener("click", openCustomizer);
+    document.getElementById("closeCustomizerBtn").addEventListener("click", closeCustomizer);
+    customizerModal.addEventListener("click", (e) => {
+      if (e.target === customizerModal) closeCustomizer();
+    });
+
+    document.getElementById("customizerForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      CONFIG.couple.hisName = document.getElementById("custHisName").value.trim() || "Jhoncel";
+      CONFIG.couple.herName = document.getElementById("custHerName").value.trim() || "Krizel";
+      CONFIG.couple.startDate = document.getElementById("custStartDate").value || "2025-08-15";
+      CONFIG.couple.monthsarryBadge = document.getElementById("custBadgeText").value.trim() || "Happy Monthsarry!";
+      CONFIG.couple.heroSubtitle = document.getElementById("custSubtitle").value.trim();
+      CONFIG.letter.body = document.getElementById("custLetterBody").value;
+
+      saveConfig();
+      renderAllContent();
+      finishLetterTypewriter();
+      closeCustomizer();
+      showToast("Website personalized and saved!", "✨");
+    });
+
+    // Copy CONFIG JSON to Clipboard using execCommand('copy') for iframe compatibility
+    document.getElementById("copyConfigJsonBtn").addEventListener("click", () => {
+      const codeStr = `const DEFAULT_CONFIG = ${JSON.stringify(CONFIG, null, 2)};`;
+      const tempArea = document.createElement("textarea");
+      tempArea.value = codeStr;
+      document.body.appendChild(tempArea);
+      tempArea.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempArea);
+      showToast("CONFIG code copied to clipboard!", "📋");
+    });
+
+    document.getElementById("resetDefaultConfigBtn").addEventListener("click", () => {
+      localStorage.removeItem(STORAGE_KEY);
+      CONFIG = JSON.parse(JSON.stringify(DEFAULT_CONFIG));
+      renderAllContent();
+      closeCustomizer();
+      showToast("Reset to default template settings", "🔄");
+    });
+
+    /**
+     * =========================================================================
+     * 12. AMBIENT FLOATING PETALS & CONFETTI CANVASES
+     * =========================================================================
+     */
+    const ambientCanvas = document.getElementById("ambientCanvas");
+    const ambientCtx = ambientCanvas.getContext("2d");
+    const confettiCanvas = document.getElementById("confettiCanvas");
+    const confettiCtx = confettiCanvas.getContext("2d");
+
+    let petals = [];
+    let confettiParticles = [];
+
+    function resizeCanvases() {
+      ambientCanvas.width = window.innerWidth;
+      ambientCanvas.height = window.innerHeight;
+      confettiCanvas.width = window.innerWidth;
+      confettiCanvas.height = window.innerHeight;
+    }
+
+    window.addEventListener("resize", resizeCanvases);
+    resizeCanvases();
+
+    // Initialize Subtle Floating Ambient Petals/Hearts
+    function initAmbientPetals() {
+      petals = [];
+      const count = Math.min(26, Math.floor(window.innerWidth / 48));
+      for (let i = 0; i < count; i++) {
+        petals.push({
+          x: Math.random() * ambientCanvas.width,
+          y: Math.random() * ambientCanvas.height,
+          size: Math.random() * 8 + 5,
+          speedY: Math.random() * 0.45 + 0.2,
+          speedX: (Math.random() - 0.5) * 0.35,
+          angle: Math.random() * Math.PI * 2,
+          spin: (Math.random() - 0.5) * 0.012,
+          opacity: Math.random() * 0.35 + 0.12
+        });
+      }
+    }
+
+    function drawHeartShape(ctx, x, y, size, color, alpha, rotation = 0) {
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(rotation);
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      const topCurveHeight = size * 0.3;
+      ctx.moveTo(0, topCurveHeight);
+      ctx.bezierCurveTo(0, 0, -size / 2, 0, -size / 2, topCurveHeight);
+      ctx.bezierCurveTo(-size / 2, (size + topCurveHeight) / 2, 0, (size + topCurveHeight) / 1.4, 0, size);
+      ctx.bezierCurveTo(0, (size + topCurveHeight) / 1.4, size / 2, (size + topCurveHeight) / 2, size / 2, topCurveHeight);
+      ctx.bezierCurveTo(size / 2, 0, 0, 0, 0, topCurveHeight);
+      ctx.closePath();
+      ctx.fill();
+      ctx.restore();
+    }
+
+    function triggerHeartConfetti(originX, originY, count = 24) {
+      const colors = ["#e0285e", "#ff80a1", "#f44d7b", "#fbbf24", "#fda4af"];
+      for (let i = 0; i < count; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = Math.random() * 6 + 2.5;
+        confettiParticles.push({
+          x: originX,
+          y: originY,
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 2.5,
+          size: Math.random() * 10 + 7,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          alpha: 1,
+          rotation: Math.random() * Math.PI,
+          vRot: (Math.random() - 0.5) * 0.12
+        });
+      }
+    }
+
+    function animateCanvases() {
+      // 1. Ambient Canvas
+      ambientCtx.clearRect(0, 0, ambientCanvas.width, ambientCanvas.height);
+      petals.forEach(p => {
+        p.y -= p.speedY;
+        p.x += p.speedX + Math.sin(p.angle) * 0.2;
+        p.angle += p.spin;
+
+        if (p.y < -20) {
+          p.y = ambientCanvas.height + 20;
+          p.x = Math.random() * ambientCanvas.width;
+        }
+        drawHeartShape(ambientCtx, p.x, p.y, p.size, "#f44d7b", p.opacity, p.angle);
+      });
+
+      // 2. Confetti Burst Canvas
+      confettiCtx.clearRect(0, 0, confettiCanvas.width, confettiCanvas.height);
+      for (let i = confettiParticles.length - 1; i >= 0; i--) {
+        const c = confettiParticles[i];
+        c.x += c.vx;
+        c.y += c.vy;
+        c.vy += 0.16; // gentle gravity
+        c.alpha -= 0.016;
+        c.rotation += c.vRot;
+
+        if (c.alpha <= 0) {
+          confettiParticles.splice(i, 1);
+        } else {
+          drawHeartShape(confettiCtx, c.x, c.y, c.size, c.color, c.alpha, c.rotation);
+        }
+      }
+
+      requestAnimationFrame(animateCanvases);
+    }
+
+    /**
+     * =========================================================================
+     * 13. INITIALIZE ON WINDOW LOAD
+     * =========================================================================
+     */
+    window.onload = function () {
+      renderAllContent();
+      initAmbientPetals();
+      animateCanvases();
+    };
+  </script>
+</body>
+</html>
